@@ -1,0 +1,42 @@
+# v2 syntax
+version: "2"
+
+# Named volumes
+volumes:
+  # MySQL Data
+  republica-mysql-data:
+    driver: local
+
+services:
+  # MySQL (5.7)
+  mysql:
+    image: mysql:5.7
+    container_name: republica-mysql
+    volumes:
+      - republica-mysql-data:/var/lib/mysql
+    ports:
+      - "3307:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=republica
+      - MYSQL_DATABASE=republica
+      - MYSQL_USER=republica
+      - MYSQL_PASSWORD=republica
+    networks:
+      - app-network
+
+  # PHP (with Caddy)
+  app:
+    image: ambientum/php:7.1-caddy
+    container_name: republica-app
+    volumes:
+      - .:/var/www/app
+    ports:
+      - "8001:8080"
+    links:
+      - mysql
+    networks:
+      - app-network
+#Docker Networks
+networks:
+  app-network:
+    driver: bridge
