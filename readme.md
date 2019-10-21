@@ -4,7 +4,7 @@ Encontre as melhores repúblicas perto de você!
 
 Site desenvolvido como desafio. Nele utilizo ReactJs no front, Nodejs para fornecer os dados para o front-end e uma API em Laravel que é consumida pelo node.
 
-## Tecnologies
+## Technologies
 
 -   REACTJS ( [Repositório Front-end](https://github.com/niltonslf/quero-republica-front-end) )
 -   NODEJS ( [Repositório nodejs](https://github.com/niltonslf/quero-republica-node) )
