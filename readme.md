@@ -1,41 +1,33 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+# Quero república - PHP
 
-# Projeto
+Encontre as melhores repúblicas perto de você!
 
-Api de integração do Addplayer
+Site desenvolvido como desafio. Nele utilizo ReactJs no front, Nodejs para fornecer os dados para o front-end e uma API em Laravel que é consumida pelo node.
 
-## Instalação do docker (linux)
+## Tecnologies
 
-```
-    cd [pasta-do-projeto]
+-   REACTJS ( [Repositório Front-end](https://github.com/niltonslf/quero-republica-front-end) )
+-   NODEJS ( [Repositório nodejs](https://github.com/niltonslf/quero-republica-node) )
+-   LARAVEl ( [Repositório API](https://github.com/niltonslf/quero-republica-api) )
 
-    chmod +x install-docker.sh
-    ./install-docker.sh
+## Scripts
 
-```
+Rodar versão de desenvolvimento:
 
-##instalação do docker (windows)
+### `php artisan run serve`
 
-[https://docs.docker.com/docker-for-windows/install/](https://docs.docker.com/docker-for-windows/install/)
+Rodar com docker
 
-## Configurando projeto para desenvolvimento
+### `docker-compose up -d`
 
-No terminal execute:
+Entrar no console do container:
 
-```
-    docker-compose up -d \\ rodar docker do projeto
+### `docker exec -it republica-app /bin/bash`
 
-    docker exec -it addplayer-app /bin/bash \\ acessar terminal do container
+Criar banco e inserir dados padrão:
 
-    ### já dentro do container ###
+### `php artisan migrate:fresh --seed`
 
-    composer install \\ instalar dependências
+## DEMO
 
-    composer update
-
-    composer dump-autoload
-
-    php artisan migrate:fresh \\ Criar banco de dados
-
-    php artisan db:seed \\ carregar com informações iniciais
-```
+[http://republicafront.niltonlopes.com.br/](http://republicafront.niltonlopes.com.br/)
