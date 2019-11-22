@@ -15,3 +15,4 @@ use Firebase\Auth\Token\Verifier;
 */
 
 Route::get('/republic', 'RepublicController@index');
+Route::get('/republic/{query}', ['as' => 'search', 'uses' => 'RepublicController@filter']);

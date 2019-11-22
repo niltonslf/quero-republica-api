@@ -23,7 +23,6 @@ services:
       - MYSQL_PASSWORD=republica
     networks:
       - app-network
-
   # PHP (with Caddy)
   app:
     image: ambientum/php:7.1-caddy

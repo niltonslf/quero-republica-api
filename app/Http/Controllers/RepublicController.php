@@ -29,4 +29,27 @@ class RepublicController extends Controller
             "body" => $republics
         ], 200);
     }
+
+    public function filter(Request $request){
+        $query  = $request->query();
+
+         $republics = Republic::where('name', 'LIKE',"%{$query['term']}%")
+         ->orWhere('city', 'LIKE',"%{$query['term']}%")
+         ->orWhere('state', 'LIKE',"%{$query['term']}%")
+         ->orWhere('description', 'LIKE',"%{$query['term']}%")->get();
+
+        if ($republics->count() == 0){
+              return response()->json([
+                'success' => false,
+                'message' => 'Nenhuma república foi encontrada :/',
+                "body" => null
+            ], 400);
+        }
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Repúblicas encontradas!',
+            "body" => $republics
+        ], 200);
+    }
 }

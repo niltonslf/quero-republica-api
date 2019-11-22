@@ -7,7 +7,6 @@ Site desenvolvido como desafio. Nele utilizo ReactJs no front, Nodejs para forne
 ## Technologies
 
 -   REACTJS ( [Repositório Front-end](https://github.com/niltonslf/quero-republica-front-end) )
--   NODEJS ( [Repositório nodejs](https://github.com/niltonslf/quero-republica-node) )
 -   LARAVEl ( [Repositório API](https://github.com/niltonslf/quero-republica-api) )
 
 ## Scripts
